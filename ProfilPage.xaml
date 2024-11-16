@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ProfilPage"
+             Title="Личный кабинет">
+    
+    <StackLayout Padding="20">
+        <Label Text="Имя пациента: Иван Иванов"
+               FontSize="20" />
+        <Label Text="Диагноз: Анальная дифтерия"
+               FontSize="20" />
+        <Label Text="Заметки:"
+               FontSize="20" />
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="Заметка 1" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

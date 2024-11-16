@@ -1,0 +1,36 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.DoctorPage"
+             Title="Ввод курса лечения">
+
+    <StackLayout Padding="10">
+        <Label Text="Добавить курс таблеток" FontSize="20" HorizontalOptions="Center" />
+
+        <!-- Ввод даты начала приема -->
+        <Label Text="Начало приема" />
+        <DatePicker x:Name="StartDatePicker" />
+
+        <!-- Ввод даты завершения приема -->
+        <Label Text="Завершение приема" />
+        <DatePicker x:Name="EndDatePicker" />
+
+        <!-- Ввод времени приема -->
+        <Label Text="Добавить время приема (часы и минуты)" />
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <TimePicker x:Name="TimePicker" />
+            <Button Text="Добавить" Clicked="OnAddTimeClicked" />
+        </StackLayout>
+
+        <!-- Список времени приема -->
+        <CollectionView x:Name="TimesList" ItemsSource="{Binding Times}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding}" FontSize="16" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Кнопка для сохранения курса -->
+        <Button Text="Сохранить курс" Clicked="OnAddCourseClicked" Margin="0,10" />
+    </StackLayout>
+</ContentPage>
