@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.NotesPage"
+             Title="Рекомендации">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#4E2BD3" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, *" Padding="10">
+        <!-- Закрепленная область с диагнозом и лечащим врачом -->
+        <StackLayout Grid.Row="0" BackgroundColor="#E8EAF6" Padding="10" Spacing="5">
+            <Label Text="Поставленный диагноз:"
+                   FontSize="18"
+                   FontAttributes="Bold" />
+            <Label Text="Диабет 2го типа"
+                   FontSize="16"
+                   Margin="0,0,0,10" />
+
+            <Label Text="Ваш лечащий врач:"
+                   FontSize="18"
+                   FontAttributes="Bold" />
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="Селезнев Егор Романович: "
+                       FontSize="16" />
+                <Label Text="📞 89991234567"
+                       FontSize="16"
+                       TextColor="Blue"
+                       GestureRecognizers="{TapGestureRecognizer Command={Binding PhoneCallCommand}}"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Прокручиваемая область с рекомендациями -->
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="10" Spacing="10">
+                <Label Text="Рекомендации:"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       Margin="0,0,0,10" />
+
+                <!-- Пример рекомендаций -->
+                <Label Text="• Нормализуйте вес и контролируйте уровень сахара в крови." FontSize="16" />
+                <Label Text="• Употребляйте больше продуктов с низким гликемическим индексом." FontSize="16" />
+                <Label Text="• Регулярно занимайтесь физической активностью." FontSize="16" />
+                <Label Text="• Исключите сладкие напитки из рациона." FontSize="16" />
+                <Label Text="• Пейте достаточное количество воды." FontSize="16" />
+                <Label Text="• Следуйте предписаниям врача по приему медикаментов." FontSize="16" />
+                <Label Text="• Регулярно проходите осмотры у эндокринолога." FontSize="16" />
+                <Label Text="• Ведите дневник питания и физических нагрузок." FontSize="16" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

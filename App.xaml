@@ -1,7 +1,8 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiApp1"
+             xmlns:pages="clr-namespace:MauiApp1.Pages"
              x:Class="MauiApp1.App">
     <Application.MainPage>
         <Shell>
@@ -9,25 +10,24 @@
             <TabBar>
                 <!-- Вкладка "Профиль" -->
                 <ShellContent Title="Профиль" Icon="profile_icon.png">
-                    <local:ProfilPage />
+                    <pages:ProfilPage />
                 </ShellContent>
 
                 <!-- Вкладка "Календарь" -->
                 <ShellContent Title="Календарь" Icon="calendar_icon.png">
-                    <local:CalendarPage />
+                    <pages:CalendarPage />
                 </ShellContent>
 
                 <!-- Вкладка "Таблетки" -->
                 <ShellContent Title="Таблетки" Icon="pills_icon.png">
-                    <local:PillsPage />
+                    <pages:PillsPage />
                 </ShellContent>
 
                 <!-- Вкладка "Блокнот" -->
                 <ShellContent Title="Блокнот" Icon="notepad_icon.png">
-                    <local:NotesPage />
+                    <pages:NotesPage />
                 </ShellContent>
             </TabBar>
         </Shell>
     </Application.MainPage>
-    
 </Application>

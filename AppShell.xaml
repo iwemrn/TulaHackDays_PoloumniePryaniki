@@ -4,43 +4,29 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1"
-    Shell.FlyoutBehavior="Flyout"
+    xmlns:pages="clr-namespace:MauiApp1.Pages"
+    Shell.FlyoutBehavior="Disabled"
     Title="MauiApp1">
     <!-- Таббар для навигации между вкладками -->
     <TabBar>
-        <!-- Вкладка "Профиль" -->
-        <ShellContent Title="Профиль" Icon="profile_icon.png" Route="profile">
-            <local:ProfilPage />
-        </ShellContent>
-
-        <!-- Вкладка "Календарь" -->
-        <ShellContent Title="Календарь" Icon="calendar_icon.png" Route="calendar">
-            <local:CalendarPage />
-        </ShellContent>
-
-        <!-- Вкладка "Чааат" -->
-        <ShellContent Title="Чаты" Icon="calendar_icon.png" Route="calendar">
-            <local:ChatPage />
+        <!-- Вкладка "Показатели" -->
+        <ShellContent Title="Показатели" Icon="calendar.svg" Route="calendar">
+            <pages:CalendarPage />
         </ShellContent>
 
         <!-- Вкладка "Таблетки" -->
-        <ShellContent Title="Таблетки" Icon="pills_icon.png" Route="pills">
-            <local:PillsPage />
+        <ShellContent Title="Таблетки" Icon="pills.svg" Route="pills">
+            <pages:PillsPage />
         </ShellContent>
 
-        <!-- Вкладка "Блокнот" -->
-        <ShellContent Title="Блокнот" Icon="notepad_icon.png" Route="notes">
-            <local:NotesPage />
+        <!-- Вкладка "Рекомендации" -->
+        <ShellContent Title="Рекомендация" Icon="recommendation.svg" Route="notes">
+            <pages:NotesPage />
         </ShellContent>
 
-        <!-- Вкладка "Календарь" -->
-        <ShellContent Title="Врач" Icon="calendar_icon.png" Route="calendar">
-            <local:DoctorPage />
+        <!-- Вкладка "Личный кабинет" -->
+        <ShellContent Title="Личный кабинет" Icon="user.svg" Route="user">
+            <pages:ProfilPage />
         </ShellContent>
-        <!-- Вкладка "Календарь" -->
-        <ShellContent Title="Врач" Icon="calendar_icon.png" Route="calendar">
-            <local:PatientPage />
-        </ShellContent>
-
     </TabBar>
 </Shell>

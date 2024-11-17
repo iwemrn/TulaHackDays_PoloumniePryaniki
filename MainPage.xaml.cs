@@ -10,5 +10,4 @@ namespace MauiApp1
             BindingContext = new PatientViewModel(); // Привязка данных к ViewModel
         }
     }
-
 }

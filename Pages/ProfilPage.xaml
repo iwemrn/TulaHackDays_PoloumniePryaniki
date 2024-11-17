@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.ProfilPage"
+             Title="Личный кабинет">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#4E2BD3" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="10" Spacing="10">
+        <!-- Фото и имя пользователя -->
+        <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" HorizontalOptions="Center">
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                <!-- Фотография -->
+                <Image x:Name="UserPhoto"
+                       Source="default_user.png"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       Aspect="AspectFill"
+                       HorizontalOptions="Center" />
+
+                <!-- Имя пользователя -->
+                <Label x:Name="UserName"
+                       Text="Софья Ерохина"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <!-- Кнопка для загрузки фотографии -->
+                <Button Text="Загрузить фото"
+                        BackgroundColor="#4E2BD3"
+                        TextColor="White"
+                        Clicked="OnUploadPhotoClicked"
+                        HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Кнопка вызова скорой -->
+        <Button Text="Вызвать скорую"
+                BackgroundColor="#4E2BD3"
+                TextColor="White"
+                FontAttributes="Bold"
+                Clicked="OnCallEmergency"
+                Margin="0,10,0,10" />
+
+        <!-- Последние показатели -->
+        <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="0,10">
+            <VerticalStackLayout>
+                <Label Text="Ваши последние показатели:" FontSize="18" FontAttributes="Bold" />
+                <CollectionView x:Name="ReadingsList" ItemsSource="{Binding Readings}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding .}" FontSize="16" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

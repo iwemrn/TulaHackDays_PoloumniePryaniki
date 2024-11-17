@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.LoginPage"
+             Title="Вход">
+    <StackLayout Padding="20" Spacing="10" VerticalOptions="Center">
+        <!-- Логотип -->
+        <Image Source="app_logo.png" HeightRequest="80" WidthRequest="80" HorizontalOptions="Center" />
+
+        <!-- Текст -->
+        <Label Text="Через соцсети"
+               FontSize="18"
+               TextColor="Gray"
+               HorizontalOptions="Center" />
+
+        <!-- Соцсети -->
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15" Margin="0,10">
+            <ImageButton Source="vk_icon.svg" HeightRequest="50" WidthRequest="50" Clicked="OnVkClicked" />
+            <ImageButton Source="yandex_icon.svg" HeightRequest="50" WidthRequest="50" Clicked="OnYandexClicked" />
+            <ImageButton Source="telegram_icon.svg" HeightRequest="50" WidthRequest="50" Clicked="OnTelegramClicked" />
+        </HorizontalStackLayout>
+
+        <!-- Линия и текст -->
+        <Label Text="Или через логин и пароль"
+               FontSize="18"
+               TextColor="Gray"
+               HorizontalOptions="Center"
+               Margin="0,10" />
+
+        <!-- Поля ввода -->
+        <Entry Placeholder="Логин или Email"
+               Keyboard="Email"
+               x:Name="LoginEntry"
+               Margin="0,5" />
+
+        <Entry Placeholder="Пароль"
+               IsPassword="True"
+               x:Name="PasswordEntry"
+               Margin="0,5" />
+
+        <!-- Кнопка входа -->
+        <Button Text="Войти"
+                BackgroundColor="#1A0F42"
+                TextColor="White"
+                FontAttributes="Bold"
+                Clicked="OnLoginClicked"
+                Margin="0,10" />
+
+        <!-- Забыт пароль -->
+        <Label Text="Вы забыли пароль?"
+               FontSize="14"
+               TextColor="Gray"
+               HorizontalOptions="Center" />
+
+        <Label Text="Восстановить"
+               FontSize="14"
+               TextColor="Blue"
+               HorizontalOptions="Center"
+               GestureRecognizers="{TapGestureRecognizer Tapped='OnRestorePasswordClicked'}" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.PillsPage"
+             Title="Прием лекарств">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#4E2BD3" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10">
+            <!-- Карточка 1 -->
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Дата в левом верхнем углу -->
+                    <Label Text="13.01.2024" Grid.Row="0" Grid.Column="0" FontSize="16" FontAttributes="Bold" />
+
+                    <!-- Название препарата в правом верхнем углу -->
+                    <Label Text="Амарил" Grid.Row="0" Grid.Column="1" FontSize="16" FontAttributes="Bold"
+                           HorizontalTextAlignment="End" />
+
+                    <!-- Время приема таблеток -->
+                    <VerticalStackLayout Grid.Row="1" Grid.ColumnSpan="2" Spacing="5" Margin="0,10">
+                        <Label Text="08:00 Таблетка принята" FontSize="14" />
+                        <Label Text="20:00 Таблетка не принята" FontSize="14" />
+                    </VerticalStackLayout>
+
+                    <!-- Область кнопок -->
+                    <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="2" Spacing="10" Margin="0,10,0,0">
+                        <Button Text="Таблетка принята"
+                                BackgroundColor="#1A0F42"
+                                TextColor="White"
+                                IsEnabled="False" />
+                        <Button Text="Таблетка не принята"
+                                BackgroundColor="#4E2BD3"
+                                TextColor="White"
+                                Clicked="OnNotTakenClicked" />
+                    </HorizontalStackLayout>
+                </Grid>
+
+                <!-- Добавить GestureRecognizer для области -->
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCardTapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!-- Карточка 2 -->
+            <Frame BorderColor="LightGray" CornerRadius="10" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Дата в левом верхнем углу -->
+                    <Label Text="14.01.2024" Grid.Row="0" Grid.Column="0" FontSize="16" FontAttributes="Bold" />
+
+                    <!-- Название препарата в правом верхнем углу -->
+                    <Label Text="Галвус" Grid.Row="0" Grid.Column="1" FontSize="16" FontAttributes="Bold"
+                           HorizontalTextAlignment="End" />
+
+                    <!-- Время приема таблеток -->
+                    <VerticalStackLayout Grid.Row="1" Grid.ColumnSpan="2" Spacing="5" Margin="0,10">
+                        <Label Text="09:00 Таблетка принята" FontSize="14" />
+                        <Label Text="21:00 Таблетка не принята" FontSize="14" />
+                    </VerticalStackLayout>
+
+                    <!-- Область кнопок -->
+                    <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="2" Spacing="10" Margin="0,10,0,0">
+                        <Button Text="Таблетка принята"
+                                BackgroundColor="#1A0F42"
+                                TextColor="White"
+                                IsEnabled="False" />
+                        <Button Text="Таблетка не принята"
+                                BackgroundColor="#4E2BD3"
+                                TextColor="White"
+                                Clicked="OnNotTakenClicked" />
+                    </HorizontalStackLayout>
+                </Grid>
+
+                <!-- Добавить GestureRecognizer для области -->
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCardTapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

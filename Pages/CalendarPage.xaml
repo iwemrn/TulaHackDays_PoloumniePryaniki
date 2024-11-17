@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.CalendarPage"
+             Title="Ваши показатели">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#4E2BD3" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="10" Spacing="10">
+        <!-- Заголовок страницы -->
+        <Label Text="Измерение ваших показателей"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,10" />
+
+        <!-- Список показателей -->
+        <CollectionView x:Name="ReadingsCollection" Margin="0,10" ItemsLayout="VerticalList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="10" Margin="0,0,0,10" BackgroundColor="#F5F5F5" Spacing="10">
+                        <!-- Дата -->
+                        <Entry Placeholder="Введите дату"
+                               Text="{Binding Date}"
+                               Margin="0,0,0,5" />
+
+                        <!-- Наименование показателя -->
+                        <Entry Placeholder="Наименование показателя"
+                               Text="{Binding Name}"
+                               Margin="0,0,0,5" />
+
+                        <!-- Значение -->
+                        <Entry Placeholder="Значение показателя"
+                               Text="{Binding Value}"
+                               Keyboard="Numeric"
+                               Margin="0,0,0,5" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Кнопки управления -->
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="20" Margin="0,10">
+            <Button Text="Добавить"
+                    BackgroundColor="#4E2BD3"
+                    TextColor="White"
+                    Clicked="OnAddReadingClicked" />
+            <Button Text="Удалить"
+                    BackgroundColor="#4E2BD3"
+                    TextColor="White"
+                    Clicked="OnDeleteReadingClicked" />
+        </HorizontalStackLayout>
+
+        <!-- Кнопка передать показания -->
+        <Button Text="Передать показания"
+                BackgroundColor="#4E2BD3"
+                TextColor="White"
+                FontAttributes="Bold"
+                Clicked="OnSubmitReadingsClicked"
+                HorizontalOptions="Center"
+                Margin="0,20" />
+    </StackLayout>
+</ContentPage>

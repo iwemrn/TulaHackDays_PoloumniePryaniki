@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage; // Для использования Preferences
 
 namespace MauiApp1
 {
@@ -6,8 +7,13 @@ namespace MauiApp1
     {
         public App()
         {
-            InitializeComponent();  // Инициализация компонентов XAML
-            MainPage = new AppShell();  // Установка AppShell как главной страницы
+            InitializeComponent();
+
+            // Установка MainPage с учётом нового пространства имен для LoginPage
+            MainPage = new NavigationPage(new Pages.LoginPage());
+
+            // Установите глобальное имя приложения с помощью Preferences
+            Preferences.Set("AppName", "MedTalk");
         }
     }
 }
